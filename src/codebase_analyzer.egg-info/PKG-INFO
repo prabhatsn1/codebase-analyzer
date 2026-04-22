@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: codebase-analyzer
+Version: 0.1.0
+Summary: An agentic AI that understands, reasons about, and explains any software repository
+Requires-Python: >=3.11
+Requires-Dist: openai>=1.30.0
+Requires-Dist: gitpython>=3.1.40
+Requires-Dist: rich>=13.7.0
+Requires-Dist: click>=8.1.7
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: tiktoken>=0.7.0
+Provides-Extra: azure
+Requires-Dist: openai>=1.30.0; extra == "azure"
+Provides-Extra: huggingface
+Requires-Dist: huggingface_hub>=0.23.0; extra == "huggingface"
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0.0; extra == "dev"
+Requires-Dist: ruff>=0.4.0; extra == "dev"

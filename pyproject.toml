@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codebase-analyzer"
+version = "0.1.0"
+description = "An agentic AI that understands, reasons about, and explains any software repository"
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.30.0",
+    "gitpython>=3.1.40",
+    "rich>=13.7.0",
+    "click>=8.1.7",
+    "python-dotenv>=1.0.0",
+    "tiktoken>=0.7.0",
+]
+
+[project.optional-dependencies]
+azure = [
+    "openai>=1.30.0",   # AzureOpenAI is bundled with the openai package
+]
+huggingface = [
+    "huggingface_hub>=0.23.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.4.0",
+]
+
+[project.scripts]
+codebase-analyzer = "analyzer.main:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
