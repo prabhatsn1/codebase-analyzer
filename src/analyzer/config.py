@@ -45,7 +45,11 @@ class Config:
         if env_file:
             load_dotenv(env_file)
         else:
-            for candidate in [Path.cwd() / ".env", Path.home() / ".env"]:
+            for candidate in [
+                Path.cwd() / ".env",
+                Path(__file__).parents[3] / ".env",
+                Path.home() / ".env",
+            ]:
                 if candidate.is_file():
                     load_dotenv(candidate)
                     break
